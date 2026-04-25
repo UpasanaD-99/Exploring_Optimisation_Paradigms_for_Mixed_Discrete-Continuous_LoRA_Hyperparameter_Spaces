@@ -1,0 +1,2610 @@
+{
+    "method": "blindfolded_spiderman_optimisation",
+    "gpu_name": "Tesla T4",
+    "num_seeds": 4,
+    "seeds": [
+        42,
+        1,
+        1234,
+        999
+    ],
+    "num_trajectories_per_seed": 10,
+    "steps_per_trajectory": 15,
+    "num_epochs_per_eval": 3,
+    "search_space": {
+        "learning_rate": {
+            "type": "log_uniform",
+            "min": 1e-06,
+            "max": 0.0005
+        },
+        "warmup_ratio": {
+            "type": "continuous",
+            "min": 0.0,
+            "max": 0.2
+        },
+        "lora_r": {
+            "type": "discrete",
+            "values": [
+                2,
+                4,
+                8,
+                16,
+                32
+            ]
+        },
+        "lora_alpha": {
+            "type": "discrete",
+            "values": [
+                8,
+                16,
+                32,
+                64,
+                128
+            ]
+        },
+        "lora_dropout": {
+            "type": "continuous",
+            "min": 0.0,
+            "max": 0.3
+        },
+        "target_modules": {
+            "type": "categorical",
+            "values": [
+                "attention-only",
+                "attention-plus-ffn"
+            ]
+        }
+    },
+    "seeds_results": [
+        {
+            "seed": 42,
+            "trajectories": [
+                {
+                    "trajectory_no": 1,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.9365625,
+                            "train_time_sec": 351.1393052389999,
+                            "gpu_memory_gb": 1.2863736152648926,
+                            "hyperparams": {
+                                "learning_rate": 0.00019618685233970621,
+                                "warmup_ratio": 0.04669250255732839,
+                                "lora_r": 8,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.23911462833830627,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 2,
+                            "move_type": "y-step",
+                            "val_acc": 0.9325,
+                            "train_time_sec": 355.8432233330004,
+                            "gpu_memory_gb": 1.3080716133117676,
+                            "hyperparams": {
+                                "learning_rate": 0.00018694281880679748,
+                                "warmup_ratio": 0.0,
+                                "lora_r": 32,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.2482714384183266,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 2,
+                            "move_type": "u-step",
+                            "val_acc": 0.9359375,
+                            "train_time_sec": 351.01452988599976,
+                            "gpu_memory_gb": 1.2863736152648926,
+                            "hyperparams": {
+                                "learning_rate": 0.00045143150209438486,
+                                "warmup_ratio": 0.04516825440206684,
+                                "lora_r": 8,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.295101279660041,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.9365625
+                },
+                {
+                    "trajectory_no": 2,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.8775,
+                            "train_time_sec": 356.0100684480003,
+                            "gpu_memory_gb": 1.3080716133117676,
+                            "hyperparams": {
+                                "learning_rate": 1.5150638332798038e-05,
+                                "warmup_ratio": 0.0,
+                                "lora_r": 32,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.3,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.93125,
+                            "train_time_sec": 352.97456730199974,
+                            "gpu_memory_gb": 1.2936062812805176,
+                            "hyperparams": {
+                                "learning_rate": 0.0001159486093788927,
+                                "warmup_ratio": 0.01980418387000718,
+                                "lora_r": 16,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.23346712606522496,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.9365625
+                },
+                {
+                    "trajectory_no": 3,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.7703125,
+                            "train_time_sec": 355.89647330800017,
+                            "gpu_memory_gb": 1.3080716133117676,
+                            "hyperparams": {
+                                "learning_rate": 7.4168857337837764e-06,
+                                "warmup_ratio": 0.129868288022361,
+                                "lora_r": 32,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.1114903439758365,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.9365625,
+                            "train_time_sec": 352.6672741760003,
+                            "gpu_memory_gb": 1.2936062812805176,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.05681365451853502,
+                                "lora_r": 16,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.2587453055931302,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.9365625
+                },
+                {
+                    "trajectory_no": 4,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.564375,
+                            "train_time_sec": 350.126409339,
+                            "gpu_memory_gb": 1.28275728225708,
+                            "hyperparams": {
+                                "learning_rate": 3.6497062803536887e-06,
+                                "warmup_ratio": 0.018561902883423565,
+                                "lora_r": 4,
+                                "lora_alpha": 64,
+                                "lora_dropout": 0.20279645457137052,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.9275,
+                            "train_time_sec": 350.67746998799976,
+                            "gpu_memory_gb": 1.2863736152648926,
+                            "hyperparams": {
+                                "learning_rate": 4.43305817554422e-05,
+                                "warmup_ratio": 0.037167016684493286,
+                                "lora_r": 8,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.26945987281738665,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.9365625
+                },
+                {
+                    "trajectory_no": 5,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.919375,
+                            "train_time_sec": 305.93081013900064,
+                            "gpu_memory_gb": 1.0623650550842285,
+                            "hyperparams": {
+                                "learning_rate": 6.656284531869586e-05,
+                                "warmup_ratio": 0.0005714115496212368,
+                                "lora_r": 32,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.048233855463351495,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.9353125,
+                            "train_time_sec": 350.41214789399965,
+                            "gpu_memory_gb": 1.2863736152648926,
+                            "hyperparams": {
+                                "learning_rate": 0.0002502100607673263,
+                                "warmup_ratio": 0.08464193057689831,
+                                "lora_r": 8,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.290688780097797,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.9365625
+                },
+                {
+                    "trajectory_no": 6,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.9340625,
+                            "train_time_sec": 349.73018954300005,
+                            "gpu_memory_gb": 1.28275728225708,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.0,
+                                "lora_r": 4,
+                                "lora_alpha": 64,
+                                "lora_dropout": 0.016261405512321036,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.9378125,
+                            "train_time_sec": 352.0318629019994,
+                            "gpu_memory_gb": 1.2936062812805176,
+                            "hyperparams": {
+                                "learning_rate": 0.0004669233278858495,
+                                "warmup_ratio": 0.07261159017447637,
+                                "lora_r": 16,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.2022588387752696,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 2,
+                            "move_type": "y-step",
+                            "val_acc": 0.9325,
+                            "train_time_sec": 350.6472671570009,
+                            "gpu_memory_gb": 1.2863736152648926,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.0027106463394630967,
+                                "lora_r": 8,
+                                "lora_alpha": 64,
+                                "lora_dropout": 0.012833599373182125,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 2,
+                            "move_type": "u-step",
+                            "val_acc": 0.9340625,
+                            "train_time_sec": 352.8516203929994,
+                            "gpu_memory_gb": 1.2936062812805176,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.047862384513177696,
+                                "lora_r": 16,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.1876523436211591,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.9378125
+                },
+                {
+                    "trajectory_no": 7,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.8546875,
+                            "train_time_sec": 305.4198904669993,
+                            "gpu_memory_gb": 1.0540337562561035,
+                            "hyperparams": {
+                                "learning_rate": 4.0404724712478635e-05,
+                                "warmup_ratio": 0.055281543050579064,
+                                "lora_r": 4,
+                                "lora_alpha": 64,
+                                "lora_dropout": 0.3,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.93875,
+                            "train_time_sec": 352.4935037269988,
+                            "gpu_memory_gb": 1.2936062812805176,
+                            "hyperparams": {
+                                "learning_rate": 0.00024040085446693006,
+                                "warmup_ratio": 0.020614314670923586,
+                                "lora_r": 16,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.2148086780104881,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 2,
+                            "move_type": "y-step",
+                            "val_acc": 0.8334375,
+                            "train_time_sec": 305.4431615630001,
+                            "gpu_memory_gb": 1.0552239418029785,
+                            "hyperparams": {
+                                "learning_rate": 3.0029257909034586e-05,
+                                "warmup_ratio": 0.005883774615610876,
+                                "lora_r": 8,
+                                "lora_alpha": 64,
+                                "lora_dropout": 0.3,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        },
+                        {
+                            "step_no": 2,
+                            "move_type": "u-step",
+                            "val_acc": 0.94,
+                            "train_time_sec": 352.6145851099991,
+                            "gpu_memory_gb": 1.2936062812805176,
+                            "hyperparams": {
+                                "learning_rate": 0.0002762990293333344,
+                                "warmup_ratio": 0.04828651808783642,
+                                "lora_r": 16,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.2594965665742369,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 3,
+                            "move_type": "y-step",
+                            "val_acc": 0.87375,
+                            "train_time_sec": 305.27875569299977,
+                            "gpu_memory_gb": 1.0552239418029785,
+                            "hyperparams": {
+                                "learning_rate": 4.715162485596627e-05,
+                                "warmup_ratio": 0.03576555904082062,
+                                "lora_r": 8,
+                                "lora_alpha": 64,
+                                "lora_dropout": 0.3,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        },
+                        {
+                            "step_no": 3,
+                            "move_type": "u-step",
+                            "val_acc": 0.936875,
+                            "train_time_sec": 352.55824897300045,
+                            "gpu_memory_gb": 1.2936062812805176,
+                            "hyperparams": {
+                                "learning_rate": 0.0004145272134949865,
+                                "warmup_ratio": 0.043718956124681914,
+                                "lora_r": 16,
+                                "lora_alpha": 64,
+                                "lora_dropout": 0.26916250490927957,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.94
+                },
+                {
+                    "trajectory_no": 8,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.9346875,
+                            "train_time_sec": 356.01572762400065,
+                            "gpu_memory_gb": 1.3080716133117676,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.18471916334443264,
+                                "lora_r": 32,
+                                "lora_alpha": 64,
+                                "lora_dropout": 0.10975680502936495,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.934375,
+                            "train_time_sec": 356.10338733000026,
+                            "gpu_memory_gb": 1.3080716133117676,
+                            "hyperparams": {
+                                "learning_rate": 0.00013712385782909718,
+                                "warmup_ratio": 0.043100425364226584,
+                                "lora_r": 32,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.2507314931200759,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.94
+                },
+                {
+                    "trajectory_no": 9,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.721875,
+                            "train_time_sec": 352.60589554200124,
+                            "gpu_memory_gb": 1.2936062812805176,
+                            "hyperparams": {
+                                "learning_rate": 5.640198568297635e-06,
+                                "warmup_ratio": 0.011918535417739025,
+                                "lora_r": 16,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.27411021396990387,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.9353125,
+                            "train_time_sec": 356.1128635969999,
+                            "gpu_memory_gb": 1.3080716133117676,
+                            "hyperparams": {
+                                "learning_rate": 0.00014728769969691425,
+                                "warmup_ratio": 0.03307310519614839,
+                                "lora_r": 32,
+                                "lora_alpha": 64,
+                                "lora_dropout": 0.285880648211932,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.94
+                },
+                {
+                    "trajectory_no": 10,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.9378125,
+                            "train_time_sec": 352.35368759000085,
+                            "gpu_memory_gb": 1.2936062812805176,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.10786439079517217,
+                                "lora_r": 16,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.10748685077879534,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.9309375,
+                            "train_time_sec": 356.1454069299998,
+                            "gpu_memory_gb": 1.3080716133117676,
+                            "hyperparams": {
+                                "learning_rate": 8.731592842799818e-05,
+                                "warmup_ratio": 0.053293210778143446,
+                                "lora_r": 32,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.25433410519254585,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.94
+                }
+            ],
+            "best_trajectory": 7,
+            "best_val_acc": 0.94,
+            "best_cfg": {
+                "learning_rate": 0.0002762990293333344,
+                "warmup_ratio": 0.04828651808783642,
+                "lora_r": 16,
+                "lora_alpha": 128,
+                "lora_dropout": 0.2594965665742369,
+                "target_modules": [
+                    "q_lin",
+                    "v_lin",
+                    "ffn.lin1",
+                    "ffn.lin2"
+                ],
+                "target_modules_option": "attention-plus-ffn"
+            },
+            "val_acc_mean": 0.8968749999999999,
+            "val_acc_std": 0.08311824455632469,
+            "all_val_accs": [
+                0.934375,
+                0.9365625,
+                0.9325,
+                0.9359375,
+                0.8775,
+                0.93125,
+                0.7703125,
+                0.9365625,
+                0.564375,
+                0.9275,
+                0.919375,
+                0.9353125,
+                0.9340625,
+                0.9378125,
+                0.9325,
+                0.9340625,
+                0.8546875,
+                0.93875,
+                0.8334375,
+                0.94,
+                0.87375,
+                0.936875,
+                0.9346875,
+                0.934375,
+                0.721875,
+                0.9353125,
+                0.9378125,
+                0.9309375
+            ],
+            "avg_train_time_sec": 345.96660493307405,
+            "total_train_time_sec": 9341.098333193002,
+            "avg_gpu_memory_gb": 1.2601180429811831
+        },
+        {
+            "seed": 1,
+            "trajectories": [
+                {
+                    "trajectory_no": 1,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.831875,
+                            "train_time_sec": 284.99516513,
+                            "gpu_memory_gb": 0.7772994041442871,
+                            "hyperparams": {
+                                "learning_rate": 2.1498383557378593e-05,
+                                "warmup_ratio": 0.2,
+                                "lora_r": 4,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.036501163986395246,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        },
+                        {
+                            "step_no": 2,
+                            "move_type": "y-step",
+                            "val_acc": 0.928125,
+                            "train_time_sec": 282.4740902220001,
+                            "gpu_memory_gb": 0.7226119041442871,
+                            "hyperparams": {
+                                "learning_rate": 0.00013621679035875258,
+                                "warmup_ratio": 0.2,
+                                "lora_r": 4,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.0,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        },
+                        {
+                            "step_no": 3,
+                            "move_type": "y-step",
+                            "val_acc": 0.9340625,
+                            "train_time_sec": 282.68003368199993,
+                            "gpu_memory_gb": 0.7238020896911621,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.2,
+                                "lora_r": 8,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.0,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        },
+                        {
+                            "step_no": 4,
+                            "move_type": "y-step",
+                            "val_acc": 0.9315625,
+                            "train_time_sec": 282.5804287199999,
+                            "gpu_memory_gb": 0.7238020896911621,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.2,
+                                "lora_r": 8,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.0,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        },
+                        {
+                            "step_no": 4,
+                            "move_type": "u-step",
+                            "val_acc": 0.929375,
+                            "train_time_sec": 282.65393929000015,
+                            "gpu_memory_gb": 0.7226119041442871,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.2,
+                                "lora_r": 4,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.0,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.9340625
+                },
+                {
+                    "trajectory_no": 2,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.9334375,
+                            "train_time_sec": 323.53956929499986,
+                            "gpu_memory_gb": 0.9263472557067871,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.2,
+                                "lora_r": 32,
+                                "lora_alpha": 64,
+                                "lora_dropout": 0.0,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.9296875,
+                            "train_time_sec": 282.3244486130002,
+                            "gpu_memory_gb": 0.7238020896911621,
+                            "hyperparams": {
+                                "learning_rate": 0.0003256298765063458,
+                                "warmup_ratio": 0.15574861726149256,
+                                "lora_r": 8,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.0,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.9340625
+                },
+                {
+                    "trajectory_no": 3,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.9240625,
+                            "train_time_sec": 285.39566352600013,
+                            "gpu_memory_gb": 0.7772994041442871,
+                            "hyperparams": {
+                                "learning_rate": 0.0003307670170320228,
+                                "warmup_ratio": 0.025621934898030864,
+                                "lora_r": 4,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.009852524743844319,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.9309375,
+                            "train_time_sec": 285.7351559429999,
+                            "gpu_memory_gb": 0.7784895896911621,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.17368617885159257,
+                                "lora_r": 8,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.042409962066797514,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.9340625
+                },
+                {
+                    "trajectory_no": 4,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.92625,
+                            "train_time_sec": 285.12765643700004,
+                            "gpu_memory_gb": 0.7767043113708496,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.1974978777138888,
+                                "lora_r": 2,
+                                "lora_alpha": 64,
+                                "lora_dropout": 0.010120678619765197,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.929375,
+                            "train_time_sec": 282.02900158500006,
+                            "gpu_memory_gb": 0.7238020896911621,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.1853879597856807,
+                                "lora_r": 8,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.0,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.9340625
+                },
+                {
+                    "trajectory_no": 5,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.924375,
+                            "train_time_sec": 284.8052636850002,
+                            "gpu_memory_gb": 0.7767043113708496,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.16897400032160084,
+                                "lora_r": 2,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.03964397673260282,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.9340625,
+                            "train_time_sec": 281.9203779690001,
+                            "gpu_memory_gb": 0.7238020896911621,
+                            "hyperparams": {
+                                "learning_rate": 0.0004559146304545049,
+                                "warmup_ratio": 0.1879617844619132,
+                                "lora_r": 8,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.0,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.9340625
+                },
+                {
+                    "trajectory_no": 6,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.9253125,
+                            "train_time_sec": 284.7471615330005,
+                            "gpu_memory_gb": 0.7767043113708496,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.2,
+                                "lora_r": 2,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.09288574705642703,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.93,
+                            "train_time_sec": 282.0696355529999,
+                            "gpu_memory_gb": 0.7238020896911621,
+                            "hyperparams": {
+                                "learning_rate": 0.00046593364407200577,
+                                "warmup_ratio": 0.19380114370483625,
+                                "lora_r": 8,
+                                "lora_alpha": 64,
+                                "lora_dropout": 0.0,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.9340625
+                },
+                {
+                    "trajectory_no": 7,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.6028125,
+                            "train_time_sec": 281.8016185590004,
+                            "gpu_memory_gb": 0.7220168113708496,
+                            "hyperparams": {
+                                "learning_rate": 5.232413736926249e-06,
+                                "warmup_ratio": 0.2,
+                                "lora_r": 2,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.0,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.935,
+                            "train_time_sec": 281.85740739999983,
+                            "gpu_memory_gb": 0.7238020896911621,
+                            "hyperparams": {
+                                "learning_rate": 0.00026536012542039094,
+                                "warmup_ratio": 0.1647443953207187,
+                                "lora_r": 8,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.0,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        },
+                        {
+                            "step_no": 2,
+                            "move_type": "y-step",
+                            "val_acc": 0.603125,
+                            "train_time_sec": 281.6890298039998,
+                            "gpu_memory_gb": 0.7226119041442871,
+                            "hyperparams": {
+                                "learning_rate": 5.503106601591497e-06,
+                                "warmup_ratio": 0.1938686416495582,
+                                "lora_r": 4,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.0,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        },
+                        {
+                            "step_no": 2,
+                            "move_type": "u-step",
+                            "val_acc": 0.9290625,
+                            "train_time_sec": 284.8412797689998,
+                            "gpu_memory_gb": 0.7784895896911621,
+                            "hyperparams": {
+                                "learning_rate": 0.00017237761773894667,
+                                "warmup_ratio": 0.1738675415133949,
+                                "lora_r": 8,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.04441242310730953,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.935
+                },
+                {
+                    "trajectory_no": 8,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.581875,
+                            "train_time_sec": 283.5759574550002,
+                            "gpu_memory_gb": 0.7309432029724121,
+                            "hyperparams": {
+                                "learning_rate": 5.660268502727888e-06,
+                                "warmup_ratio": 0.19571676287541667,
+                                "lora_r": 32,
+                                "lora_alpha": 64,
+                                "lora_dropout": 0.0,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.9328125,
+                            "train_time_sec": 281.70869943399975,
+                            "gpu_memory_gb": 0.7238020896911621,
+                            "hyperparams": {
+                                "learning_rate": 0.00015303382468999634,
+                                "warmup_ratio": 0.1918154386178471,
+                                "lora_r": 8,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.0,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.935
+                },
+                {
+                    "trajectory_no": 9,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.930625,
+                            "train_time_sec": 317.8452687629997,
+                            "gpu_memory_gb": 0.9044890403747559,
+                            "hyperparams": {
+                                "learning_rate": 0.00011444684481063595,
+                                "warmup_ratio": 0.08431908843828874,
+                                "lora_r": 8,
+                                "lora_alpha": 32,
+                                "lora_dropout": 0.0,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.928125,
+                            "train_time_sec": 284.88088688399966,
+                            "gpu_memory_gb": 0.7784895896911621,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.14730055009557452,
+                                "lora_r": 8,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.017558523006878074,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.935
+                },
+                {
+                    "trajectory_no": 10,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.938125,
+                            "train_time_sec": 317.3966994829998,
+                            "gpu_memory_gb": 0.900846004486084,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.11558355589479614,
+                                "lora_r": 4,
+                                "lora_alpha": 32,
+                                "lora_dropout": 0.0,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 2,
+                            "move_type": "y-step",
+                            "val_acc": 0.9315625,
+                            "train_time_sec": 317.4797130910001,
+                            "gpu_memory_gb": 0.899024486541748,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.07379684238276199,
+                                "lora_r": 2,
+                                "lora_alpha": 16,
+                                "lora_dropout": 0.0,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 2,
+                            "move_type": "u-step",
+                            "val_acc": 0.9328125,
+                            "train_time_sec": 327.96126637900034,
+                            "gpu_memory_gb": 1.0037264823913574,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.10752906644834853,
+                                "lora_r": 2,
+                                "lora_alpha": 64,
+                                "lora_dropout": 0.035742958655991086,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.938125
+                }
+            ],
+            "best_trajectory": 10,
+            "best_val_acc": 0.938125,
+            "best_cfg": {
+                "learning_rate": 0.0005000000000000001,
+                "warmup_ratio": 0.11558355589479614,
+                "lora_r": 4,
+                "lora_alpha": 32,
+                "lora_dropout": 0.0,
+                "target_modules": [
+                    "q_lin",
+                    "v_lin",
+                    "ffn.lin1",
+                    "ffn.lin2"
+                ],
+                "target_modules_option": "attention-plus-ffn"
+            },
+            "val_acc_mean": 0.8717476851851851,
+            "val_acc_std": 0.1340217757163716,
+            "all_val_accs": [
+                0.44875,
+                0.831875,
+                0.928125,
+                0.9340625,
+                0.9315625,
+                0.929375,
+                0.9334375,
+                0.9296875,
+                0.9240625,
+                0.9309375,
+                0.92625,
+                0.929375,
+                0.924375,
+                0.9340625,
+                0.9253125,
+                0.93,
+                0.6028125,
+                0.935,
+                0.603125,
+                0.9290625,
+                0.581875,
+                0.9328125,
+                0.930625,
+                0.928125,
+                0.938125,
+                0.9315625,
+                0.9328125
+            ],
+            "avg_train_time_sec": 290.5429007001539,
+            "total_train_time_sec": 7554.115418204,
+            "avg_gpu_memory_gb": 0.7794548548184909
+        },
+        {
+            "seed": 1234,
+            "trajectories": [
+                {
+                    "trajectory_no": 1,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.6021875,
+                            "train_time_sec": 316.510784363,
+                            "gpu_memory_gb": 0.899024486541748,
+                            "hyperparams": {
+                                "learning_rate": 4.400208053001692e-06,
+                                "warmup_ratio": 0.08059636069832107,
+                                "lora_r": 2,
+                                "lora_alpha": 64,
+                                "lora_dropout": 0.0,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.92625,
+                            "train_time_sec": 285.2641083830001,
+                            "gpu_memory_gb": 0.7784895896911621,
+                            "hyperparams": {
+                                "learning_rate": 0.0004438590082011784,
+                                "warmup_ratio": 0.0982601357041813,
+                                "lora_r": 8,
+                                "lora_alpha": 8,
+                                "lora_dropout": 0.08319418108584813,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        },
+                        {
+                            "step_no": 2,
+                            "move_type": "y-step",
+                            "val_acc": 0.76125,
+                            "train_time_sec": 317.30207740100013,
+                            "gpu_memory_gb": 0.900846004486084,
+                            "hyperparams": {
+                                "learning_rate": 1.1916685022134937e-05,
+                                "warmup_ratio": 0.12227933024095168,
+                                "lora_r": 4,
+                                "lora_alpha": 32,
+                                "lora_dropout": 0.0,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 2,
+                            "move_type": "u-step",
+                            "val_acc": 0.9228125,
+                            "train_time_sec": 285.333008974,
+                            "gpu_memory_gb": 0.7772994041442871,
+                            "hyperparams": {
+                                "learning_rate": 0.00043016465393177746,
+                                "warmup_ratio": 0.09867026468433981,
+                                "lora_r": 4,
+                                "lora_alpha": 8,
+                                "lora_dropout": 0.1453228749352842,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.92625
+                },
+                {
+                    "trajectory_no": 2,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.906875,
+                            "train_time_sec": 282.3133029590001,
+                            "gpu_memory_gb": 0.7220168113708496,
+                            "hyperparams": {
+                                "learning_rate": 0.00017918020175126847,
+                                "warmup_ratio": 0.0,
+                                "lora_r": 2,
+                                "lora_alpha": 8,
+                                "lora_dropout": 0.0,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.9246875,
+                            "train_time_sec": 327.75516089000007,
+                            "gpu_memory_gb": 1.0055346488952637,
+                            "hyperparams": {
+                                "learning_rate": 0.00016924157619698782,
+                                "warmup_ratio": 0.07388587547645134,
+                                "lora_r": 4,
+                                "lora_alpha": 8,
+                                "lora_dropout": 0.041943172866605635,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.92625
+                },
+                {
+                    "trajectory_no": 3,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.9278125,
+                            "train_time_sec": 328.4127241789997,
+                            "gpu_memory_gb": 1.0091509819030762,
+                            "hyperparams": {
+                                "learning_rate": 0.00012843050437123902,
+                                "warmup_ratio": 0.0,
+                                "lora_r": 8,
+                                "lora_alpha": 32,
+                                "lora_dropout": 0.055946997512540175,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 2,
+                            "move_type": "y-step",
+                            "val_acc": 0.9290625,
+                            "train_time_sec": 330.8819328180002,
+                            "gpu_memory_gb": 1.0163836479187012,
+                            "hyperparams": {
+                                "learning_rate": 4.475874135447197e-05,
+                                "warmup_ratio": 0.0,
+                                "lora_r": 16,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.03278689147522842,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 3,
+                            "move_type": "y-step",
+                            "val_acc": 0.8978125,
+                            "train_time_sec": 334.71323079700005,
+                            "gpu_memory_gb": 1.0308489799499512,
+                            "hyperparams": {
+                                "learning_rate": 1.827073804732509e-05,
+                                "warmup_ratio": 0.0,
+                                "lora_r": 32,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.01310080134351343,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 3,
+                            "move_type": "u-step",
+                            "val_acc": 0.9021875,
+                            "train_time_sec": 330.8837936590003,
+                            "gpu_memory_gb": 1.0163836479187012,
+                            "hyperparams": {
+                                "learning_rate": 1.726510399019722e-05,
+                                "warmup_ratio": 0.02546056241936614,
+                                "lora_r": 16,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.04190530574721146,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.9290625
+                },
+                {
+                    "trajectory_no": 4,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.9384375,
+                            "train_time_sec": 328.47030983600007,
+                            "gpu_memory_gb": 1.0055346488952637,
+                            "hyperparams": {
+                                "learning_rate": 0.00038454306904576677,
+                                "warmup_ratio": 0.0,
+                                "lora_r": 4,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.24828495077948437,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 2,
+                            "move_type": "y-step",
+                            "val_acc": 0.9240625,
+                            "train_time_sec": 328.1216762549998,
+                            "gpu_memory_gb": 1.0037264823913574,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.0,
+                                "lora_r": 2,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.3,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 2,
+                            "move_type": "u-step",
+                            "val_acc": 0.9303125,
+                            "train_time_sec": 328.5959955389999,
+                            "gpu_memory_gb": 1.0055346488952637,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.017456648809166968,
+                                "lora_r": 4,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.20440202780249808,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.9384375
+                },
+                {
+                    "trajectory_no": 5,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.93,
+                            "train_time_sec": 328.7313075000002,
+                            "gpu_memory_gb": 1.0091509819030762,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.0,
+                                "lora_r": 8,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.17794192400480435,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.9290625,
+                            "train_time_sec": 328.2740684849996,
+                            "gpu_memory_gb": 1.0055346488952637,
+                            "hyperparams": {
+                                "learning_rate": 0.00039047604326311727,
+                                "warmup_ratio": 0.036612277266215264,
+                                "lora_r": 4,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.2700373542864347,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.9384375
+                },
+                {
+                    "trajectory_no": 6,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.9321875,
+                            "train_time_sec": 328.5918443669998,
+                            "gpu_memory_gb": 1.0091509819030762,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.0983766021668761,
+                                "lora_r": 8,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.3,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.93125,
+                            "train_time_sec": 328.17668174200026,
+                            "gpu_memory_gb": 1.0091509819030762,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.0,
+                                "lora_r": 8,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.22597085927560157,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.9384375
+                },
+                {
+                    "trajectory_no": 7,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.928125,
+                            "train_time_sec": 285.13768609,
+                            "gpu_memory_gb": 0.7784895896911621,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.08987551054915299,
+                                "lora_r": 8,
+                                "lora_alpha": 64,
+                                "lora_dropout": 0.2556727965438935,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.93375,
+                            "train_time_sec": 327.6314394130004,
+                            "gpu_memory_gb": 1.0055346488952637,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.027998061671034566,
+                                "lora_r": 4,
+                                "lora_alpha": 64,
+                                "lora_dropout": 0.2645811648010305,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.9384375
+                },
+                {
+                    "trajectory_no": 8,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.9328125,
+                            "train_time_sec": 327.41062009100006,
+                            "gpu_memory_gb": 1.0037264823913574,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.010957659348796292,
+                                "lora_r": 2,
+                                "lora_alpha": 32,
+                                "lora_dropout": 0.3,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.93375,
+                            "train_time_sec": 327.17513232500005,
+                            "gpu_memory_gb": 1.0037264823913574,
+                            "hyperparams": {
+                                "learning_rate": 0.00021923854753238452,
+                                "warmup_ratio": 0.0,
+                                "lora_r": 2,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.25769344572275127,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.9384375
+                },
+                {
+                    "trajectory_no": 9,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.93875,
+                            "train_time_sec": 333.50721043500016,
+                            "gpu_memory_gb": 1.0308489799499512,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.0,
+                                "lora_r": 32,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.29447216114837205,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 2,
+                            "move_type": "y-step",
+                            "val_acc": 0.335,
+                            "train_time_sec": 332.13719209600004,
+                            "gpu_memory_gb": 1.0308489799499512,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.0,
+                                "lora_r": 32,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.3,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 2,
+                            "move_type": "u-step",
+                            "val_acc": 0.9378125,
+                            "train_time_sec": 333.42112488899966,
+                            "gpu_memory_gb": 1.0308489799499512,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.006595643814208858,
+                                "lora_r": 32,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.3,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.93875
+                },
+                {
+                    "trajectory_no": 10,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.9009375,
+                            "train_time_sec": 333.5630493530007,
+                            "gpu_memory_gb": 1.0308489799499512,
+                            "hyperparams": {
+                                "learning_rate": 1.8748043742539936e-05,
+                                "warmup_ratio": 0.08607550138169867,
+                                "lora_r": 32,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.3,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.9371875,
+                            "train_time_sec": 333.8035984930011,
+                            "gpu_memory_gb": 1.0308489799499512,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.0,
+                                "lora_r": 32,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.3,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.93875
+                }
+            ],
+            "best_trajectory": 9,
+            "best_val_acc": 0.93875,
+            "best_cfg": {
+                "learning_rate": 0.0005000000000000001,
+                "warmup_ratio": 0.0,
+                "lora_r": 32,
+                "lora_alpha": 128,
+                "lora_dropout": 0.29447216114837205,
+                "target_modules": [
+                    "q_lin",
+                    "v_lin",
+                    "ffn.lin1",
+                    "ffn.lin2"
+                ],
+                "target_modules_option": "attention-plus-ffn"
+            },
+            "val_acc_mean": 0.8857870370370371,
+            "val_acc_std": 0.12778461929819182,
+            "all_val_accs": [
+                0.921875,
+                0.6021875,
+                0.92625,
+                0.76125,
+                0.9228125,
+                0.906875,
+                0.9246875,
+                0.9278125,
+                0.9290625,
+                0.8978125,
+                0.9021875,
+                0.9384375,
+                0.9240625,
+                0.9303125,
+                0.93,
+                0.9290625,
+                0.9321875,
+                0.93125,
+                0.928125,
+                0.93375,
+                0.9328125,
+                0.93375,
+                0.93875,
+                0.335,
+                0.9378125,
+                0.9009375,
+                0.9371875
+            ],
+            "avg_train_time_sec": 322.0045792820001,
+            "total_train_time_sec": 8372.119061332003,
+            "avg_gpu_memory_gb": 0.9672878338740423
+        },
+        {
+            "seed": 999,
+            "trajectories": [
+                {
+                    "trajectory_no": 1,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.93375,
+                            "train_time_sec": 337.39887847499995,
+                            "gpu_memory_gb": 1.5513081550598145,
+                            "hyperparams": {
+                                "learning_rate": 0.0003618213071535346,
+                                "warmup_ratio": 0.03508412454183738,
+                                "lora_r": 32,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.061929627407680876,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 2,
+                            "move_type": "y-step",
+                            "val_acc": 0.9384375,
+                            "train_time_sec": 337.0058555409996,
+                            "gpu_memory_gb": 1.5513081550598145,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.0,
+                                "lora_r": 32,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.07841551755090143,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 3,
+                            "move_type": "y-step",
+                            "val_acc": 0.938125,
+                            "train_time_sec": 289.8139454909997,
+                            "gpu_memory_gb": 1.3056015968322754,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.0,
+                                "lora_r": 32,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.09242852417263889,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        },
+                        {
+                            "step_no": 3,
+                            "move_type": "u-step",
+                            "val_acc": 0.9353125,
+                            "train_time_sec": 290.1404947310002,
+                            "gpu_memory_gb": 1.3056015968322754,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.0,
+                                "lora_r": 32,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.023101179945516505,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.9384375
+                },
+                {
+                    "trajectory_no": 2,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.9396875,
+                            "train_time_sec": 331.4031666150004,
+                            "gpu_memory_gb": 1.5296101570129395,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.0,
+                                "lora_r": 8,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.031196635863076427,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 2,
+                            "move_type": "y-step",
+                            "val_acc": 0.9296875,
+                            "train_time_sec": 320.06888489999983,
+                            "gpu_memory_gb": 1.4194836616516113,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.0,
+                                "lora_r": 2,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.0,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 2,
+                            "move_type": "u-step",
+                            "val_acc": 0.92875,
+                            "train_time_sec": 288.51929959799963,
+                            "gpu_memory_gb": 1.2984604835510254,
+                            "hyperparams": {
+                                "learning_rate": 0.0002963155515312837,
+                                "warmup_ratio": 0.02219705473717265,
+                                "lora_r": 8,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.07362995681571025,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.9396875
+                },
+                {
+                    "trajectory_no": 3,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.915,
+                            "train_time_sec": 330.94146283900045,
+                            "gpu_memory_gb": 1.5241856575012207,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.0,
+                                "lora_r": 2,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.2115303143310411,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.9328125,
+                            "train_time_sec": 331.22254816999884,
+                            "gpu_memory_gb": 1.5296101570129395,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.0,
+                                "lora_r": 8,
+                                "lora_alpha": 64,
+                                "lora_dropout": 0.01623411866047494,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.9396875
+                },
+                {
+                    "trajectory_no": 4,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.9378125,
+                            "train_time_sec": 325.17996682800003,
+                            "gpu_memory_gb": 1.4468064308166504,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.027399650861277387,
+                                "lora_r": 32,
+                                "lora_alpha": 64,
+                                "lora_dropout": 0.0,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.935,
+                            "train_time_sec": 287.7563829310002,
+                            "gpu_memory_gb": 1.2984604835510254,
+                            "hyperparams": {
+                                "learning_rate": 0.0002379583593287366,
+                                "warmup_ratio": 0.02467221717238611,
+                                "lora_r": 8,
+                                "lora_alpha": 64,
+                                "lora_dropout": 0.028119953085920288,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.9396875
+                },
+                {
+                    "trajectory_no": 5,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.9346875,
+                            "train_time_sec": 286.6581413819986,
+                            "gpu_memory_gb": 1.2514023780822754,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.0,
+                                "lora_r": 32,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.0,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.9359375,
+                            "train_time_sec": 288.1486518389993,
+                            "gpu_memory_gb": 1.3008408546447754,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.0,
+                                "lora_r": 16,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.06958529824354966,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.9396875
+                },
+                {
+                    "trajectory_no": 6,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.9375,
+                            "train_time_sec": 331.2258454589992,
+                            "gpu_memory_gb": 1.5296101570129395,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.1052677748594788,
+                                "lora_r": 8,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.20425939608614035,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.939375,
+                            "train_time_sec": 320.7160060690003,
+                            "gpu_memory_gb": 1.4249482154846191,
+                            "hyperparams": {
+                                "learning_rate": 0.00028704903982533346,
+                                "warmup_ratio": 0.0,
+                                "lora_r": 8,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.0,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.9396875
+                },
+                {
+                    "trajectory_no": 7,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.9275,
+                            "train_time_sec": 331.25648328900024,
+                            "gpu_memory_gb": 1.5296101570129395,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.07260969685496675,
+                                "lora_r": 8,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.19342234106598857,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.9303125,
+                            "train_time_sec": 331.2447045809986,
+                            "gpu_memory_gb": 1.5296101570129395,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.011504358067629457,
+                                "lora_r": 8,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.07392382128824065,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.9396875
+                },
+                {
+                    "trajectory_no": 8,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.925625,
+                            "train_time_sec": 330.9631805109984,
+                            "gpu_memory_gb": 1.5296101570129395,
+                            "hyperparams": {
+                                "learning_rate": 0.00010724276723362783,
+                                "warmup_ratio": 0.0,
+                                "lora_r": 8,
+                                "lora_alpha": 32,
+                                "lora_dropout": 0.20690623209008194,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.930625,
+                            "train_time_sec": 288.38317963400004,
+                            "gpu_memory_gb": 1.2972702980041504,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.0,
+                                "lora_r": 4,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.04715025314586407,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.9396875
+                },
+                {
+                    "trajectory_no": 9,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.9321875,
+                            "train_time_sec": 290.2156224949995,
+                            "gpu_memory_gb": 1.3056015968322754,
+                            "hyperparams": {
+                                "learning_rate": 0.0003388915310326167,
+                                "warmup_ratio": 0.0,
+                                "lora_r": 32,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.030312943045492164,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin"
+                                ],
+                                "target_modules_option": "attention-only"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.935625,
+                            "train_time_sec": 331.1812428739995,
+                            "gpu_memory_gb": 1.5296101570129395,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.011099490908161246,
+                                "lora_r": 8,
+                                "lora_alpha": 64,
+                                "lora_dropout": 0.08492451344591857,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.9396875
+                },
+                {
+                    "trajectory_no": 10,
+                    "steps": [
+                        {
+                            "step_no": 1,
+                            "move_type": "y-step",
+                            "val_acc": 0.9334375,
+                            "train_time_sec": 320.3683850039997,
+                            "gpu_memory_gb": 1.4249482154846191,
+                            "hyperparams": {
+                                "learning_rate": 0.0004922280707373323,
+                                "warmup_ratio": 0.0,
+                                "lora_r": 8,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.0,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        },
+                        {
+                            "step_no": 1,
+                            "move_type": "u-step",
+                            "val_acc": 0.934375,
+                            "train_time_sec": 331.13194884599943,
+                            "gpu_memory_gb": 1.5296101570129395,
+                            "hyperparams": {
+                                "learning_rate": 0.0005000000000000001,
+                                "warmup_ratio": 0.007238147083346937,
+                                "lora_r": 8,
+                                "lora_alpha": 128,
+                                "lora_dropout": 0.09739181768623602,
+                                "target_modules": [
+                                    "q_lin",
+                                    "v_lin",
+                                    "ffn.lin1",
+                                    "ffn.lin2"
+                                ],
+                                "target_modules_option": "attention-plus-ffn"
+                            }
+                        }
+                    ],
+                    "best_val_acc_in_trajectory": 0.9396875
+                }
+            ],
+            "best_trajectory": 2,
+            "best_val_acc": 0.9396875,
+            "best_cfg": {
+                "learning_rate": 0.0005000000000000001,
+                "warmup_ratio": 0.0,
+                "lora_r": 8,
+                "lora_alpha": 128,
+                "lora_dropout": 0.031196635863076427,
+                "target_modules": [
+                    "q_lin",
+                    "v_lin",
+                    "ffn.lin1",
+                    "ffn.lin2"
+                ],
+                "target_modules_option": "attention-plus-ffn"
+            },
+            "val_acc_mean": 0.9330989583333333,
+            "val_acc_std": 0.005267824301669889,
+            "all_val_accs": [
+                0.9328125,
+                0.93375,
+                0.9384375,
+                0.938125,
+                0.9353125,
+                0.9396875,
+                0.9296875,
+                0.92875,
+                0.915,
+                0.9328125,
+                0.9378125,
+                0.935,
+                0.9346875,
+                0.9359375,
+                0.9375,
+                0.939375,
+                0.9275,
+                0.9303125,
+                0.925625,
+                0.930625,
+                0.9321875,
+                0.935625,
+                0.9334375,
+                0.934375
+            ],
+            "avg_train_time_sec": 315.2584468739996,
+            "total_train_time_sec": 7250.944278101992,
+            "avg_gpu_memory_gb": 1.4323090884996497
+        }
+    ],
+    "overall_stats": {
+        "global_best_seed": 42,
+        "global_best_trajectory": 7,
+        "global_best_val_acc": 0.94,
+        "global_best_hyperparams": {
+            "learning_rate": 0.0002762990293333344,
+            "warmup_ratio": 0.04828651808783642,
+            "lora_r": 16,
+            "lora_alpha": 128,
+            "lora_dropout": 0.2594965665742369,
+            "target_modules": [
+                "q_lin",
+                "v_lin",
+                "ffn.lin1",
+                "ffn.lin2"
+            ],
+            "target_modules_option": "attention-plus-ffn"
+        },
+        "val_acc_mean_over_all_evals": 0.8958520047169811,
+        "val_acc_std_over_all_evals": 0.10513720410360947,
+        "total_train_time_sec_over_all_seeds": 32518.277090830998,
+        "val_acc_mean_of_seed_bests": 0.939140625,
+        "val_acc_std_of_seed_bests": 0.000745265001106983
+    }
+}
