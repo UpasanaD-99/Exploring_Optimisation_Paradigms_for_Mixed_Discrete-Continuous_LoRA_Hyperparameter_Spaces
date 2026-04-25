@@ -1,6 +1,6 @@
 # LoRA Hyperparameter Optimisation with Metaheuristic Algorithms
 
-ℹ️ This project was developed collaboratively. Contributors section is listed below.
+> ℹ️ This project was developed collaboratively. Contributors section is listed below.
 
 For more detailed information, please refer to the full project report:  
 [Project Report](Project%20Report.pdf)
